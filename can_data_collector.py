@@ -21,7 +21,7 @@ def initialize():
         can1 = "NULL"
 
     client = pymongo.MongoClient("mongodb://localhost:27020/")
-    config = {'_id': 'utsme', 'members': [{'_id': 0, 'host': 'localhost:27017'}]}
+    config = {'_id': 'utsme', 'members': [{'_id': 0, 'host': 'localhost:27020'}]}
     #rcv = client.admin.command("replSetInitiate", config)
     #print(rcv) 
     database = client["UTSM19-" + time.strftime("%Y-%m-%d")]
@@ -89,7 +89,7 @@ def intepretID(id):
     return id_name
 
 def writetoDB(collection, data, database):
-    check = collection.insert_one(data)
+    check = database.changestream.collection.insert_one(data)
     return check.acknowledged
 
 def addtoDB(msg, id_name, id_num, database):
