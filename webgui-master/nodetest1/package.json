@@ -1,0 +1,27 @@
+{
+  "name": "nodetest1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.2.4",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.0.0",
+    "ejs": "~2.6.1",
+    "express": "^4.17.1",
+    "gaugeJS": "^1.3.7",
+    "howler": "^2.1.2",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.4.1",
+    "just-gauge": "0.0.1",
+    "local-storage": "^2.0.0",
+    "localStorage": "^1.0.4",
+    "mongodb": "^3.2.7",
+    "socket.io": "^2.2.0",
+    "socket.io-adapter-mongo": "^2.0.3"
+  }
+}
