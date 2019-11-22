@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color:#303338;
+  font-family: sans-serif;
+  color:#fff;
+  text-align:center;
+  margin: 0 auto;
+  padding: 0;
+}
+header {
+  background: rgba(0,0,0,0.75);
+  padding: 10px;
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+/* @media screen and (max-width: 600px) {
+  .nav-link .title {
+    display: block;
+    color: white;
+    background-color: #0f3975;
+
+  }
+} */
+
+
+header > h1 {
+  font-size: 42px;
+  color: #303338;
+}
+
+header > h2 {
+  font-size: 30px;
+  color: #303338;
+}
+
+code {
+  display:inline-block;
+  max-width:600px;
+  padding:80px 0 0;
+  line-height:1.5;
+  font-family:monospace;
+  color:#ccc
+}
+
+table {
+  padding: 10px;
+}
+footer {
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.label,
+.fault-label,
+.steer-label,
+.wheel-speed-label,
+.battery-temp-label,
+.battery-voltage-label,
+.ct-label,
+.lt-label,
+.sector-label {
+  position: relative;
+  margin: 10px 10px auto;
+  font-size: 24px;
+}
+
+.small {
+  padding-top: 50px;
+}
+.steer {
+  height: 150px;
+  width: 250px;
+  position: relative;
+  float: left;
+  margin:40px 30px auto;
+  padding: 20px;
+
+}
+
+.steer-min {
+  position:relative;
+  top: 40%;
+  float: left;
+  /* margin: 20px 0px auto; */
+
+}
+.steer-max {
+  position: relative;
+  top: 40%;
+  float: right;
+  /* margin: 20px 0px auto; */
+}
+
+.steer-num{
+  position: absolute;
+  top: 75%;
+  left:0;
+  width:100%;
+  font-size:36px;
+  font-weight:700;
+}
+
+.down-force,
+.faults,
+.brake-pressure,
+.wheel-speed,
+.battery-temp,
+.battery-voltage,
+.colant-temp,
+.lap-times,
+.sector-times {
+  float: left;
+  width: auto;
+  height: auto;
+  margin: 40px 30px auto;
+  display: inline-table;
+}
+
+
+.df-fault-1,
+.df-fault-2,
+.df-fault-3,
+.df-fault-4,
+.fault-1,
+.fault-2,
+.fault-3,
+.fault-4
+ {
+  width: 50px;
+  height: 50px;
+}
+
+.brake-number,
+.bms-number,
+.bt-num,
+.bv-num,
+.ct-num,
+.lt-num,
+.sector-num,
+.ws-front,
+.ws-rear {
+  position: inherit;
+  font-size:36px;
+  font-weight:700;
+}
+
+.home,
+.electrical,
+.mechanical,
+.start-up {
+  width: 100px;
+  height: 25px;
+  background-color: white;
+  border-color: black;
+}
+
+.graphs {
+  float: left;
+  width: 45%;
+  margin: 1%;
+}
+
+
+.sign-in-header {
+  color: black;
+}
+
+.form-frame {
+  width:40%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.7);
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-radius: 5px;
+}

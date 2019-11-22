@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UTSME: Telemetry</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="\stylesheets\style.css" type="text/css">
+    <link rel="icon" href="images\download.jfif">
+</head>
+<div style="background-color: rgba(0,0,0,0.7); background-size:cover; height: 100%">
+  <body style="background-image: url('images/34.PNG'); background-repeat: no-repeat; background-size:cover; color:white" id="body" class="body">
+
+  <!-- All scripts used -->
+  <script src="\javascripts\socket.io-client\dist\socket.io.js"></script>
+  <script src="\javascripts\socket.io\lib\socket.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="\javascripts\sign-in.js" ></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+<br><br><br>
+<div class="form-frame">
+  <br>
+  <h1 class="sign-in-header" >Sign In</h1>
+  <br>
+
+  <form name="loginform" onSubmit="submit">
+    <div class="form-group">
+      <label for="exampleInputEmail1" style="color: black;">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="background-color: rgba(0,0,0,0); border-color: black;">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" style="color: black;">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="background-color: rgba(0,0,0,0); border-color: black;">
+    </div>
+    <br>
+  </form>
+  <button type="submit" class="btn btn-dark" style="width: 100%" onClick="submit()">Submit</button>
+
+</div>
+
+  </body>
+  </div>
+  <footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">© UTS Motorsports 2019</span>
+  </div>
+</footer>
+  <!-- <footer><p id="footer">If there are any issues with this website, please let Jas know</p></footer> -->
+</html>
