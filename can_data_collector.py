@@ -188,7 +188,7 @@ def main():
 
        counter = counter + 1
 
-       time.sleep(0.005)
+       time.sleep(0.1)
 
 # PYTHON MAIN CALL
 if __name__ == "__main__":

@@ -20,8 +20,10 @@ def initialize():
 def readfromDB(database):
     change_stream = database.changestream.collection.watch()
     for change in change_stream:
-        print (dumps(change))
-        print('')
+        data = change["fullDocument"]
+        del data["_id"]
+        print(data)
+        #print(change["fullDocument"])
     
 
 def main():

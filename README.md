@@ -12,7 +12,7 @@ Make sure to initialize a replica set of the main MongoDB instances
 The process is 
 
 1. Startup a new MongoDB instances with replica sets enabled
---* sudo mongod --replSet rs0 --port 27020 --bind_ip localhost --dbpath /srv/mongodb/rs0-0  --oplogSize 128
+--* sudo mongod --replSet rs0 --port 27020 --bind_ip_all --dbpath /srv/mongodb/rs0-0  --oplogSize 128
 
 2. Login to the new instancse
 --* mongo --port 27020 (Change the port numbers to reflect above)
