@@ -39,9 +39,9 @@ def initialize():
     else:
         can1 = "NULL"
 
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    client = pymongo.MongoClient("mongodb://localhost:27020/")
     config = {'_id': 'utsme', 'members': [{'_id': 0, 'host': 'localhost:27020'}]}
-    #rcv = client.admin.command("replSetInitiate", config)
+    # rcv = client.admin.command("replSetInitiate", config)
     #print(rcv) 
     database = client["UTSM19-" + time.strftime("%Y-%m-%d")]
 
@@ -105,7 +105,7 @@ def main():
        
        counter = counter + 1
 
-       time.sleep(0.1)
+       time.sleep(2)
 
 
 # PYTHON MAIN CALL
