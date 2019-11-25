@@ -68,7 +68,7 @@ def getData(can):
 
 def writetoDB(collection, data, database):
     print(collection)
-    check = database.changestream.collection.insert_one(data)
+    check = collection.insert_one(data)
     return check.acknowledged
 
 def addtoDBRaw(msg, id_name, id_num, database):
@@ -100,8 +100,6 @@ def main():
        check = writetoDB(collection, data, database)
        print("The Database Insert Okay?: " + str(check))
        # check = addtoDBRaw(msg, id_name, id, database)
-
-       
        
        counter = counter + 1
 

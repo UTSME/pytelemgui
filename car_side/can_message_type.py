@@ -163,7 +163,7 @@ class can_msg_types:
         elif id_name is "PDM15_MSG2":
             self.collection = self.database[id_name]
             byte = msg.data[0]
-            self.data = {"F_reset" : byte_5, "Timestamp": msg.timestamp} 
+            self.data = {"F_reset" : byte, "Timestamp": msg.timestamp} 
 
         elif id_name is "BSPD_FAULT":
             self.collection = self.database[id_name]
