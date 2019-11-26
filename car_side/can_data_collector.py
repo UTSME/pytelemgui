@@ -103,7 +103,7 @@ def main():
        
        counter = counter + 1
 
-       time.sleep(2)
+       time.sleep(0.1)
 
 
 # PYTHON MAIN CALL

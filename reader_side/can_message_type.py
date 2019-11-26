@@ -88,10 +88,13 @@ class can_msg_types:
                                "Timestamp": 0} 
         }
 
+    def get_can_table(self):
+        return self.CAN_BUS_DATA_TYPES
+
 
     def set_db_data(self, id_name, msg):
         check = False
-        print(id_name)
+        # print(id_name)
         for key in msg:
             self.CAN_BUS_DATA_TYPES[id_name][key] = msg[key]
         
