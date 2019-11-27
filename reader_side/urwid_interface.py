@@ -62,19 +62,22 @@ class interface(object):
         updates = []
         for id, data in self.can_table.items():
             #print("The Current ID Name is: " + id)
-            header = [('headers', u'Can ID \t'.expandtabs(4))]
+            header = [('headers', u'Can ID\t'.expandtabs(9))]
             self.append_header(updates, header)
             for key in data:
-                text = '{} \t '.format(key)
-                header = ('headers', text.expandtabs(3))
+                text = '{} \t'.format(key)
+                header = ('headers', text.expandtabs(9))
                 self.append_header(updates, header)
                 #print(updates)
-            self.append_text(updates, u' \n ', tabsize=0)
 
-            self.append_text(updates, '{} \t '.format(id), tabsize=15, color=self.get_color(-1))
+            self.append_text(updates, u' \n', tabsize=0)
+            self.append_text(updates, '{} \t'.format(id), tabsize=17, color=self.get_color(-1))
             
             for key in data:
-                self.append_text(updates, '{} \t '.format(data[key]), tabsize=15, color=self.get_color(1))
+                if key is not "Timestamp":
+                    self.append_text(updates, '{0:.2f} \t'.format(data[key]), tabsize=17, color=self.get_color(1))
+                else:
+                    self.append_text(updates, '{} \t'.format(data[key]), tabsize=17, color=self.get_color(1))
 
             self.append_text(updates, u' \n ', tabsize=0)
         # print(updates)

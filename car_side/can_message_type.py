@@ -113,11 +113,11 @@ class can_msg_types:
             byte_5 = msg.data[5]
             byte_6 = msg.data[6]
             self.data = {"Avg_cell_resistance_byte_0" : byte_0, 
-            "Avg_cell_resistance_byte_0" : byte_1, 
+            "Avg_cell_resistance_byte_1" : byte_1, 
             "Pack_ccl_byte_0" : byte_2, 
             "Pack_ccl_byte_1" : byte_3,
             "Pack_dcl_byte_0" : byte_4, 
-            "Pack_dcl_byte_0" : byte_5, 
+            "Pack_dcl_byte_1" : byte_5, 
             "checksum" : byte_6, 
             "Timestamp": msg.timestamp}
 
