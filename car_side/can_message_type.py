@@ -4,11 +4,11 @@ class can_msg_types:
 
     def __init__(self, database, debug=False):
         self.debug = debug
-        self.CAN_BUS_IDS = {"0x03a": "OrionBMS_Set1", 
-               "0x03b": "OrionBMS_Set2",
-               '0x03c": "OrionBMS_Set3",
-               "0x03d": "OrionBMS_Set4",
-               "0x03e": "OrionBMS_Set5",
+        self.CAN_BUS_IDS = {"0x3a": "OrionBMS_Set1", 
+               "0x3b": "OrionBMS_Set2",
+               "0x3c": "OrionBMS_Set3",
+               "0x3d": "OrionBMS_Set4",
+               "0x3e": "OrionBMS_Set5",
                "0x500": "PDM15_STD",
                "0x520": "PDM15_MSG0",
                "0x521": "PDM15_MSG1",

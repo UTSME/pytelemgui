@@ -13,9 +13,9 @@ class interface(object):
                        ('titlebar', 'dark red', ''),
                        ('quit button', 'dark red', ''),
                        ('headers', 'white,bold', ''),
-                       ('change', 'dark green', ''),
+                       ('change', 'dark green, bold', ''),
                        ('id', 'brown', ''),
-                       ('unchanged', 'dark blue', '')]
+                       ('unchanged', 'dark gray', '')]
 
         self.header_text = urwid.Text(u' UTSME19 Telemetry')
         self.header = urwid.AttrMap(self.header_text, 'titlebar')
@@ -63,24 +63,30 @@ class interface(object):
         updates = []
         for id, data in self.can_table.items():
             #print("The Current ID Name is: " + id)
-            header = [('headers', u'Can ID\t'.expandtabs(9))]
+            header = [('headers', u'Can ID\t'.expandtabs(14))]
             self.append_header(updates, header)
             for key in data:
-                text = '{} \t'.format(key)
-                header = ('headers', text.expandtabs(9))
+                if key is not "Timestamp":
+                    text = '{} \t'.format(key)
+                    header = ('headers', text.expandtabs(9))
+                else:
+                    text = '\t{}'.format(key)
+                    header = ('headers', text.expandtabs(7))
+
+                
                 self.append_header(updates, header)
                 #print(updates)
 
-            self.append_text(updates, u' \n', tabsize=0)
+            self.append_text(updates, u'\n', tabsize=0)
             self.append_text(updates, '{} \t'.format(id), tabsize=17, color="id")
             
             for key in data:
                 if key is not "Timestamp":
-                    self.append_text(updates, '{0:.2f} \t'.format(data[key]), tabsize=17, color=self.get_color(id, key))
+                    self.append_text(updates, '{0:.2f} \t'.format(data[key]), tabsize=18, color=self.get_color(id, key))
                 else:
                     self.append_text(updates, '{} \t'.format(data[key]), tabsize=17, color=self.get_color(id, key))
 
-            self.append_text(updates, u' \n ', tabsize=0)
+            self.append_text(updates, u' \n', tabsize=0)
         # print(updates)
         self.can_interpret.update_previous_db()
         return updates

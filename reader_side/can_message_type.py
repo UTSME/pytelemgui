@@ -188,8 +188,8 @@ class can_msg_types:
         ##### ORION BMS SET 1
         self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Rolling Counter"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["Rolling Counter"]
         self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 1"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_1"]
-        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 1"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_2"]
-        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 1"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_3"]
+        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 2"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_2"]
+        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 3"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_3"]
         self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Timestamp"] = datetime.datetime.fromtimestamp(self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["Timestamp"]//1000.0)
 
         ##### ORION BMS SET 2
