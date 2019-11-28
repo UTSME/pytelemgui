@@ -158,6 +158,15 @@ class can_msg_types:
 
         self.previous_simple_table = copy.deepcopy(self.SIMPLE_CAN_TABLE)
 
+    def compare_database(self, id, key):
+        if self.SIMPLE_CAN_TABLE[id][key] is not self.previous_simple_table[id][key]:
+            return False
+        else:
+            return True
+
+    def update_previous_db(self):
+        self.previous_simple_table = copy.deepcopy(self.SIMPLE_CAN_TABLE)
+
     def get_can_table(self):
         self.convert_to_simple()
         return self.SIMPLE_CAN_TABLE

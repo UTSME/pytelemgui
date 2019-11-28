@@ -14,7 +14,8 @@ class interface(object):
                        ('quit button', 'dark red', ''),
                        ('headers', 'white,bold', ''),
                        ('change', 'dark green', ''),
-                       ('negative', 'brown', '')]
+                       ('id', 'brown', ''),
+                       ('unchanged', 'dark blue', '')]
 
         self.header_text = urwid.Text(u' UTSME19 Telemetry')
         self.header = urwid.AttrMap(self.header_text, 'titlebar')
@@ -71,22 +72,26 @@ class interface(object):
                 #print(updates)
 
             self.append_text(updates, u' \n', tabsize=0)
-            self.append_text(updates, '{} \t'.format(id), tabsize=17, color=self.get_color(-1))
+            self.append_text(updates, '{} \t'.format(id), tabsize=17, color="id")
             
             for key in data:
                 if key is not "Timestamp":
-                    self.append_text(updates, '{0:.2f} \t'.format(data[key]), tabsize=17, color=self.get_color(1))
+                    self.append_text(updates, '{0:.2f} \t'.format(data[key]), tabsize=17, color=self.get_color(id, key))
                 else:
-                    self.append_text(updates, '{} \t'.format(data[key]), tabsize=17, color=self.get_color(1))
+                    self.append_text(updates, '{} \t'.format(data[key]), tabsize=17, color=self.get_color(id, key))
 
             self.append_text(updates, u' \n ', tabsize=0)
         # print(updates)
+        self.can_interpret.update_previous_db()
         return updates
 
-    def get_color(self, change):
-        color = 'change'
-        if change < 0:
-            color = 'negative'
+    def get_color(self, id, key):
+        comparator = self.can_interpret.compare_database(id, key)
+
+        if comparator is True:
+            color = 'unchanged'
+        elif comparator is False:
+            color = 'change'
         return color
 
     def readfromDB(self):

@@ -4,21 +4,21 @@ class can_msg_types:
 
     def __init__(self, database, debug=False):
         self.debug = debug
-        self.CAN_BUS_IDS = {0x03A: "OrionBMS_Set1", 
-               0x03B: "OrionBMS_Set2",
-               0x03C: "OrionBMS_Set3",
-               0x03D: "OrionBMS_Set4",
-               0x03E: "OrionBMS_Set5",
-               0x500: "PDM15_STD",
-               0x520: "PDM15_MSG0",
-               0x521: "PDM15_MSG1",
-               0x522: "PDM15_MSG2",
-               0x250: "BSPD_FAULT",
-               0x650: "BSPD_START",
-               0x210: "BSPD_THROTTLE",
-               0x245: "BSPD_BRAKE",
-               0x190: "UNITEK",
-               0x400: "M150_REGEN",}
+        self.CAN_BUS_IDS = {"0x03a": "OrionBMS_Set1", 
+               "0x03b": "OrionBMS_Set2",
+               '0x03c": "OrionBMS_Set3",
+               "0x03d": "OrionBMS_Set4",
+               "0x03e": "OrionBMS_Set5",
+               "0x500": "PDM15_STD",
+               "0x520": "PDM15_MSG0",
+               "0x521": "PDM15_MSG1",
+               "0x522": "PDM15_MSG2",
+               "0x250": "BSPD_FAULT",
+               "0x650": "BSPD_START",
+               "0x210": "BSPD_THROTTLE",
+               "0x245": "BSPD_BRAKE",
+               "0x190": "UNITEK",
+               "0x400": "M150_REGEN",}
 
         self.database = database
         self.collection = database["blank"]
@@ -35,9 +35,9 @@ class can_msg_types:
         
     def make_db_data(self, id_name, msg):
         check = False
-        print(id_name)
+        #print(id_name)
         if id_name is "OrionBMS_Set1":
-            print("The ID IS " + id_name)
+            #print("The ID IS " + id_name)
 
             self.collection = self.database[id_name]
             counter = msg.data[0]
@@ -54,7 +54,7 @@ class can_msg_types:
 
         elif id_name is "OrionBMS_Set2":
             self.collection = self.database[id_name]
-            print("The ID IS " + id_name)
+            #print("The ID IS " + id_name)
             temp = msg.data[0]
             byte_0 = msg.data[1]
             byte_1 = msg.data[2]
