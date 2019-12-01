@@ -158,6 +158,15 @@ class can_msg_types:
 
         self.previous_simple_table = copy.deepcopy(self.SIMPLE_CAN_TABLE)
 
+    def compare_database(self, id, key):
+        if self.SIMPLE_CAN_TABLE[id][key] is not self.previous_simple_table[id][key]:
+            return False
+        else:
+            return True
+
+    def update_previous_db(self):
+        self.previous_simple_table = copy.deepcopy(self.SIMPLE_CAN_TABLE)
+
     def get_can_table(self):
         self.convert_to_simple()
         return self.SIMPLE_CAN_TABLE
@@ -179,8 +188,8 @@ class can_msg_types:
         ##### ORION BMS SET 1
         self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Rolling Counter"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["Rolling Counter"]
         self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 1"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_1"]
-        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 1"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_2"]
-        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 1"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_3"]
+        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 2"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_2"]
+        self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Custom Flag 3"] = self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["custom_flag_3"]
         self.SIMPLE_CAN_TABLE["OrionBMS_Set1"]["Timestamp"] = datetime.datetime.fromtimestamp(self.CAN_BUS_DATA_TYPES["OrionBMS_Set1"]["Timestamp"]//1000.0)
 
         ##### ORION BMS SET 2

@@ -62,7 +62,8 @@ def getData(can):
         msg = generateMsg(rand_id)
     elif can is not "NULL":
         msg = can.recv(1)
-        print("Getting CAN")
+        msg.timestamp = int(round(time.time() * 1000))
+        #print("Getting CAN")
     return msg
 
 
@@ -85,25 +86,23 @@ def addtoDBRaw(msg, id_name, id_num, database):
 def main():
    (can, database) = initialize()
    can_msg_typing = can_msg_types(database=database)
-   global counter
    while True:
        msg = getData(can)
        id = msg.arbitration_id
-       id_name = can_msg_typing.intepretID(id)
+       id_name = can_msg_typing.intepretID(hex(id))
        (collection, data) = can_msg_typing.make_db_data(id_name, msg)
 
-       print("The message is: ")
-       print(msg)
-       print("The ID is: " + str(id))
-       print("The ID Name: " + str(id_name))
+       #print("The message is: ")
+       #print(msg)
+       #print("The ID is: " + str(id))
+       #print("The ID Name: " + str(id_name))
 
-       check = writetoDB(collection, data, database)
-       print("The Database Insert Okay?: " + str(check))
+       if id_name is not "NULL":
+           check = writetoDB(collection, data, database)
+           print("The Database Insert Okay?: " + str(check))
        # check = addtoDBRaw(msg, id_name, id, database)
-       
-       counter = counter + 1
 
-       time.sleep(0.1)
+       #time.sleep(0.1)
 
 
 # PYTHON MAIN CALL

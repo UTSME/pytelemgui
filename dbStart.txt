@@ -1,4 +1,4 @@
-sudo mongod --replSet rs0 --port 27020 --bind_ip localhost --dbpath /srv/mongodb/rs0-0  --oplogSize 128
+sudo mongod --replSet rs0 --port 27020 --bind_ip_all --dbpath /srv/mongodb/rs0-0  --oplogSize 128
 
 mongo --port 27020    
 
