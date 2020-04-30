@@ -16,7 +16,7 @@
     "gaugeJS": "^1.3.7",
     "howler": "^2.1.2",
     "http-errors": "~1.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "just-gauge": "0.0.1",
     "local-storage": "^2.0.0",
     "localStorage": "^1.0.4",
