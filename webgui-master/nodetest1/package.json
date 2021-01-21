@@ -21,7 +21,7 @@
     "local-storage": "^2.0.0",
     "localStorage": "^1.0.4",
     "mongodb": "^3.2.7",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "socket.io-adapter-mongo": "^2.0.3"
   }
 }
